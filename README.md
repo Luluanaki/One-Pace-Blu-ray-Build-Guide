@@ -365,6 +365,8 @@ Disc labels can make the final set look much more professional.
 
 Use full-face small-hole Blu-ray/DVD labels, such as Avery-style labels.
 
+https://www.avery.com/myaccount/projects
+
 Important notes:
 
 * Use small-hole labels if you want full-face coverage
