@@ -151,6 +151,55 @@ One Piece Archive/
 ```
 
 ---
+# Step 0: Download This Repository and One Pace
+
+Before beginning, download both this repository and the One Pace episodes that will be used for authoring.
+
+## Download This Repository
+
+Download this repository by clicking **Code → Download ZIP** on the GitHub page.
+
+The repository is approximately **0.92 GB** and contains:
+
+* Disc authoring project files
+* Disc label artwork
+* Blu-ray case artwork
+* Avery label templates
+
+---
+
+## Download One Pace
+
+### Storage Requirements
+
+Before downloading, make sure you have enough free storage available.
+
+In my case, the complete One Pace collection occupied approximately **254.42 GB** immediately after downloading and before any processing, normalization, or authoring work was performed. Additional temporary space will be necessary as well.
+
+### Download Speeds
+
+Many files are hosted through PixelDrain. While not required, I chose to purchase **one month of PixelDrain Premium ($5 USD at the time of writing)** to speed up the download process significantly.
+
+This is entirely optional, but it made downloading the full collection much more convenient.
+
+### Subbed Collection
+
+If you plan to create a subtitled version, episodes can be downloaded directly from the official One Pace website:
+
+* [One Pace](https://onepace.net/en)
+
+Whenever multiple versions are available, download the **highest quality version**.
+
+### Dubbed Collection
+
+If you plan to create a dubbed version similar to the one documented in this project, download all available dubbed episodes from One Pace and use Muhn Pace for the remaining content.
+
+The following guide provides download links and recommended viewing order information:
+
+* [One Pace Dub Watch Guide](https://www.reddit.com/r/onepace/comments/1rtpukk/one_pace_dub_watch_guide/)
+
+As with the subtitled version, download the **highest quality version available** whenever possible.
+
 
 # Step 1: Organize the Source Files
 
