@@ -31,21 +31,61 @@ The general workflow is:
 
 ## Required
 
-* Windows PC
-* External or internal Blu-ray writer
-* BD-R or BD-R DL discs
-* USB storage / large internal drive
-* Printer or access to a print shop
-* Blu-ray cases
-* Disc label applicator or printed alignment tool
+### **Windows PC**
+
+* TMPGEnc Authoring Works 7 is Windows-only, so a Windows PC is required for the authoring portion of this guide.
+
+### [**External**](https://www.microcenter.com/product/690617/verbatim-ultra-hd-4k-usb-32-gen-1-blu-ray-writer) **or Internal Blu-ray Writer**
+
+* Any Blu-ray writer that supports **BD-R** and **BD-R DL** media should work.
+* USB 3.0 is recommended but not required.
+* Burn speed is not particularly important since this guide recommends writing discs at **2x speed** for reliability rather than maximum speed.
+
+### [**BD-R / BD-R DL Discs**](https://a.co/d/0aujSNa2)
+
+* 50 GB BD-R DL discs are recommended for this project in order to maximize content per disc.
+* Depending on your preferred disc layout and bitrate settings, standard 25 GB BD-R discs may also be usable for some content.
+
+### **Blu-ray Cases**
+
+* [Individual Cases](https://a.co/d/0coLu6g3)
+* [8-Disc Cases](https://a.co/d/0g0iiGoA)
+
+*This repository includes artwork for 8-disc cases. However, Canva templates and source files are provided if you would like to create artwork for individual cases or other case formats.*
+
+### **Printer or Access to a Print Shop**
+
+* Required for printing disc labels and case artwork.
+* Local print shops such as Office Depot, Staples, or FedEx Office can be a convenient option if you only need a few copies.
+
+### [**Avery Full-Face Disc Labels**](https://a.co/d/02zhhNVN)
+
+* Either **Glossy** or **Matte** labels work well.
+* Make sure to purchase the **Full-Face** version or it won't properly fit the BD-R discs.
+
+
+
 
 ## Recommended
 
-* At least 1 TB of free storage
-* SSD storage for active encoding/authoring work
-* Dedicated folder structure for source, normalized, stitched, and authored files
-* Blu-ray player or software player for testing
-* Paper cutter or sharp hobby knife for cover trimming
+* **At least 400 GB of free storage**
+
+  * *The complete One Pace collection occupied approximately 254.42 GB immediately after download. Additional space will be needed for processing and authoring.*
+
+* **Blu-ray player or software player for testing**
+
+  * *A PS5 was used for testing throughout this project.*
+
+* **Paper cutter or sharp hobby knife**
+
+  * *Useful for trimming printed case artwork.*
+
+* **Label Applicator Tool**
+
+  * Buy one or [3D print one](https://www.printables.com/model/1735505-diy-disc-label-alignment-tool) if you have the means.
+  * *Make sure it is designed for full-face labels.*
+  * Or just eyeball it and hope for the best.
+
 
 ---
 
@@ -56,36 +96,18 @@ The general workflow is:
 * **FFmpeg**
 
   * Used for video conversion, normalization, stitching, audio conversion, and chapter handling.
+  * Here is a simple guide for how to install it
 
-* **FFprobe**
+* **[TMPGEnc Authoring Works 7](https://tmpgenc.pegasys-inc.com/en/download/taw7.html)**
 
-  * Used to inspect codec, resolution, framerate, pixel format, audio format, and file consistency.
-
-* **PowerShell**
-
-  * Used for batch renaming, scanning folders, running FFmpeg commands, and automating checks.
-
-* **TMPGEnc Authoring Works**
-
-  * Used for Blu-ray menu creation, disc structure creation, and authoring.
+  * Used for Blu-ray menu creation, disc structure creation, and authoring
+  * The 1 month free trial was plenty for me to do everything I needed
 
 ## Optional Tools
 
-* **MediaInfo**
+* **Avery Projects / Canva / Paint.net**
 
-  * Helpful for visually checking video/audio metadata.
-
-* **MKVToolNix**
-
-  * Useful for inspecting, remuxing, and editing MKV files.
-
-* **Canva / Photoshop / GIMP / Affinity Designer**
-
-  * Used for Blu-ray cover and disc label artwork.
-
-* **Nero / ImgBurn / other disc tools**
-
-  * Optional depending on your burning workflow.
+  * Used for Blu-ray cover and disc label artwork, if you want to make changes to the PDFs I provided.
 
 ---
 
