@@ -93,83 +93,78 @@ The general workflow is:
 
 ## Core Tools
 
-* **FFmpeg**
+* **[FFmpeg](https://www.gyan.dev/ffmpeg/builds/)**
 
-  * Used for video conversion, normalization, stitching, audio conversion, and chapter handling.
-  * Here is a simple guide for how to install it
+  * Used for video inspection, conversion, normalization, audio conversion, and chapter handling.
+  * A simple installation guide can be found [here](https://github.com/Luluanaki/One-Pace-Blu-ray-Build-Guide/blob/main/References/FFmpeg/README.md).
 
 * **[TMPGEnc Authoring Works 7](https://tmpgenc.pegasys-inc.com/en/download/taw7.html)**
 
-  * Used for Blu-ray menu creation, disc structure creation, and authoring
-  * The 1 month free trial was plenty for me to do everything I needed
-
-## Optional Tools
-
-* **Avery Projects / Canva / Paint.net**
-
-  * Used for Blu-ray cover and disc label artwork, if you want to make changes to the PDFs I provided.
-
----
-
-# Things You May Need to Buy
-
-## Disc Burning
-
-* Blu-ray writer
-* BD-R 25 GB discs
-* BD-R DL 50 GB discs
-* Spare test discs
-
-## Labeling
-
-* Avery full-face disc labels
-* Small-hole disc labels, not large-hole CD-style labels
-* Glossy or semi-gloss label sheets
-* Disc label alignment tool
-* Optional: custom 3D printed alignment tool
-* 0.8 x 8 x 20 mm spring, if using the custom printed tool
-
-## Packaging
-
-* Multi-disc Blu-ray cases
-* Glossy cover paper
-* Access to high-quality color printing
-* Paper trimmer or craft knife
-* Cutting mat
-* Ruler
+  * Used for Blu-ray authoring, menu creation, chapter management, and disc structure generation.
+  * The 30-day free trial was more than enough time for me to complete the entire project.
 
 ---
 
 # Recommended Folder Structure
 
 ```text
-One Piece Archive/
-│
-├── Source/
-│   ├── 01 - Romance Dawn/
-│   ├── 02 - Orange Town/
-│   └── ...
-│
-├── Normalized/
-│   ├── 01 - Romance Dawn/
-│   ├── 02 - Orange Town/
-│   └── ...
-│
-├── Stitched/
-│   ├── Disc 01/
-│   ├── Disc 02/
-│   └── ...
-│
-├── Authored Blu-ray/
-│   ├── Disc 01/
-│   ├── Disc 02/
-│   └── ...
-│
-├── Labels/
-│
-├── Covers/
-│
-└── Scripts/
+├───DISC 01
+│   ├───01 - Romance Dawn
+│   ├───02 - Orange Town
+│   ├───03 - Syrup Village
+│   ├───04 - Gaimon
+│   ├───05 - Baratie
+│   ├───06 - Arlong Park
+│   ├───07 - Side Stories
+│   └───08 - Loguetown
+├───DISC 02
+│   ├───09 - Reverse Mountain
+│   ├───10 - Whisky Peak
+│   ├───11 - Little Garden
+│   ├───12 - Drum Island
+│   └───13 - Alabasta
+├───DISC 03
+│   ├───14 - Jaya
+│   └───15 - Skypiea
+├───DISC 04
+│   ├───16 - Long Ring Long Land
+│   └───17 - Water Seven
+├───DISC 05
+│   ├───18 - Enies Lobby
+│   └───19 - Post Enies Lobby
+├───DISC 06
+│   ├───20 - Thriller Bark
+│   └───21 - Sabaody Archipelago
+├───DISC 07
+│   ├───22 - Amazon Lily
+│   ├───23 - Impel Down
+│   ├───24 - Adventures of the Straw Hats
+│   ├───25 - Marineford
+│   └───26 - Post War
+├───DISC 08
+│   ├───27 - Return to Sabaody
+│   └───28 - Fishman Island
+├───DISC 09
+│   ├───29 - Punk Hazard
+│   └───30 - Dressrosa - Part 01
+├───DISC 10
+│   └───30 - Dressrosa - Part 02
+├───DISC 11
+│   ├───31 - Zou
+│   └───32 - Whole Cake Island - Part 01
+├───DISC 12
+│   ├───32 - Whole Cake Island - Part 02
+│   └───33 - Reverie
+├───DISC 13
+│   ├───34 - Wano Act 1
+│   └───35 - Wano Act 2
+├───DISC 14
+│   ├───36 - Wano Act 3 - Part 01
+│   └───36 - Wano Act 3 - Part 02
+├───DISC 15
+│   └───36 - Wano Act 3 - Part 03
+└───DISC 16
+    └───37 - Egghead
 ```
 
 ---
