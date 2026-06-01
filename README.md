@@ -217,12 +217,21 @@ The following guide provides download links and recommended viewing order inform
 
 As with the subtitled version, download the **highest quality version available** whenever possible.
 
+### Optional: Dual Audio (Dubbed + Subbed)
+
+Including both English dubbed and Japanese audio tracks is possible, but requires additional processing to combine the streams before authoring.
+
+After testing the available One Pace releases, I found that the subbed versions use **burned-in subtitles** rather than separate subtitle tracks. As a result, creating a Blu-ray with both audio tracks and optional subtitles is not as straightforward as it may seem.
+
+While dual audio may be possible with additional work, I do not currently recommend it unless separate subtitle files (such as `.ass`, `.ssa`, or `.srt`) can be obtained. My project was authored using English dubbed audio only.
+
+
 
 # Step 1: Organize the Source Files
 
-Start by placing each arc into its own folder.
+Start by placing each arc into its own folder and giving the files a consistent naming format.
 
-Use a consistent naming format:
+Example:
 
 ```text
 01 - Romance Dawn 01.mkv
@@ -231,7 +240,11 @@ Use a consistent naming format:
 02 - Orange Town 02.mkv
 ```
 
-A consistent naming format makes batch scripting, stitching, menu creation, and troubleshooting much easier later.
+This is primarily for organization and makes it easier to sort files alphabetically throughout the authoring process. It is especially useful when combining content from multiple sources, such as One Pace, Muhn Pace, and other fan edits, which all use different naming conventions.
+
+By default, TMPGEnc will label episodes as **Chapter 1**, **Chapter 2**, **Chapter 3**, etc. The source filenames are not shown in the Blu-ray menus unless you manually customize the menu titles during authoring.
+
+
 
 ---
 
