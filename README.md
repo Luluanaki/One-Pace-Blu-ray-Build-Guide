@@ -84,7 +84,6 @@ The general workflow is:
 
   * Buy one or [3D print one](https://www.printables.com/model/1735505-diy-disc-label-alignment-tool) if you have the means.
   * *Make sure it is designed for full-face labels.*
-  * Or just eyeball it and hope for the best.
 
 
 ---
@@ -98,7 +97,7 @@ The general workflow is:
   * Used for Blu-ray authoring, menu creation, chapter management, and disc structure generation.
   * The 30-day free trial was more than enough time for me to complete the entire project.
     
-* **[FFmpeg](https://www.gyan.dev/ffmpeg/builds/)** *(optional, but useful for troubleshooting and compatibility issues)*
+* **[FFmpeg](https://www.gyan.dev/ffmpeg/builds/)** *(only necessary if there are compastibility issues)*
 
   * May be needed if TMPGEnc does not accept a particular video file or if you need to convert, inspect, or repair source files.
   * Can also be used for advanced workflows such as audio conversion, remuxing, normalization, and chapter handling.
@@ -338,6 +337,11 @@ For those who want to create their own menu designs, the included projects shoul
 
 5. Select the desired track and drag all episodes from that arc into the track.
     * Be sure to delete the placeholder video files from each track during this step
+
+> **Note:** There is a small chance that TMPGEnc may reject one of your source files during import. In my own build, I encountered this issue with **Fishman Island 15 (FIXED GROUP SHOT)**.
+>
+> If this happens, don't panic. A troubleshooting section is included at the end of the guide that covers how to identify and fix incompatible video files.
+
       
 6. When prompted, select:
 
@@ -705,242 +709,229 @@ Once you are satisfied with the disc, repeat **Steps 7–9** for the remaining d
 
 # Step 10: Print Disc Labels
 
-The digital work is finally done! it's time to make this project look pretty.
+The digital work is finally done—it's time to make the project look pretty.
 
-At this point you will need [**Avery Full-Face Disc Labels**](https://a.co/d/02zhhNVN) and access to a descent printer.
+At this point, you will need [**Avery Full-Face Disc Labels**](https://a.co/d/02zhhNVN) and access to a decent printer.
 
+## Review the Included Disc Label Artwork
+
+I've already created disc label artwork that I was happy with. Before making any changes, take a look at the included PDFs:
+
+```text
+├───Project Files
+│   ├───Disc Labels
+│   │   ├───PDF
+```
+
+If you're happy with the design, you can proceed directly to the **Test Print** section.
+
+> **Warning:** The included label designs contain episode and chapter ranges based on my own build. Depending on how you organize your discs, these numbers may not match your project, particularly for sagas that span multiple discs.
+>
+> There is also a very good chance that some of my numbering is incorrect—I'm fairly certain Disc 14 and Disc 15 contain mistakes. Fortunately, these labels are easy to update using the included **.avery** project files.
+
+
+If you'd like to make changes, I've also included the original Avery project files and source assets used to create the labels.
+
+> **Note:** Some assets are stored in the individual source asset folders, while others are located in the shared assets folder under **Project Files**.
+
+## Editing the Avery Projects
+
+To open one of the included `.avery` project files:
+
+1. Go to the Avery Projects website.
+2. Create an account if necessary.
+3. Click your profile icon in the upper-right corner and select **Projects**.
+4. Click **Upload Project**.
+5. Select **Browse to Open a File** and locate the desired `.avery` project file.
+6. Make whatever changes you'd like.
+
+## A Note About Avery
+
+The Avery web app is excellent for positioning artwork and generating print-ready label sheets, but it has fairly limited design capabilities.
+
+For that reason, I often created or modified artwork in external software such as **GIMP**, **Paint.NET**, or other image editors, then imported the resulting PNG files into Avery for final layout and printing.
+
+If you plan to make significant design changes, you'll likely find a similar workflow much easier than trying to do everything directly inside Avery.
+
+   
 ## Test Print
-I recommend doing a test print before wasting one of your Avery Labels, if you are doing a 16 disc project there are only 2 pages to spare.
 
-In my experience the alignment of the PDFs outputted from the AVERY design website were slightly off, 2mm too far right and 1 mm too far up. I suppose I can include alignment adjusted PDFs as well.
+I strongly recommend performing a test print before using one of your Avery label sheets. If you're creating the full 16-disc collection, there are only a couple of spare labels available, so mistakes can become expensive quickly.
 
+To help with this, I have included an **Alignment Test.pdf** page in the repository.
 
+Print the test page on a regular sheet of paper and hold it against an Avery label sheet with a light source behind it. This makes it easy to verify that the artwork is properly aligned before committing to the actual labels.
 
+### Alignment Notes
 
-Use full-face small-hole Blu-ray/DVD labels, such as Avery-style labels.
+In my case, the PDFs generated directly from the Avery website were slightly misaligned when printed:
 
-https://www.avery.com/myaccount/projects
+* Approximately **4 mm too far right**
+* Approximately **3 mm too far up**
 
-Important notes:
+Because of this, I have included adjusted versions of the PDFs with filenames ending in:
 
-* Use small-hole labels if you want full-face coverage
-* Avoid large-hole CD labels unless that is your intended design
-* Make sure the label template matches the exact product
-* Print a test on plain paper first
-* Check alignment before printing on actual label sheets
+```text
+*_adjusted.pdf
+```
+
+These worked better with my printer, but your results may vary.
+
+> **Note:** The small watermarks in the upper corners of the PDFs will print, but they are outside the label area and will not affect the finished disc labels.
+
+Once you are satisfied with the alignment, proceed with the final print.
+
+## Final Print
+
+Printing settings vary significantly between printers, drivers, operating systems, and paper types, so there is no universal set of settings that works for everyone.
+
+The most important things are:
+
+* Print at 100% scale
+* Verify alignment first
+* Use the correct paper type for your labels
+* Print at the highest quality setting available
+
+For my own build, I used Google Chrome's print dialog because it exposed more print options than some other applications.
+
+### My Print Settings (Reference Only)
+
+These settings worked well for my printer and Avery labels:
+
+* Load the label sheet according to your printer's paper orientation.
+* Borderless Printing: **Off**
+* Print on Both Sides: **None**
+* Pages per Sheet: **1**
+* Print Quality: **Best**
+* Paper Size: **Letter**
+* Print in Max DPI: **Enabled**
+
+Your exact settings may differ depending on your printer model and paper type.
 
 ---
 
 # Step 11: Apply Disc Labels
 
-Disc labels need to be centered carefully.
+Disc labels need to be applied as close to perfectly centered as possible.
 
-If a label is badly off-center, it can theoretically cause balance issues when the disc spins.
+If a label is significantly off-center, it can theoretically introduce balance issues while the disc is spinning, potentially affecting playback or increasing wear on the drive.
 
-Recommended process:
+You have several options:
 
-1. Peel the label from the backing sheet.
-2. Place the label adhesive-side up in the alignment tool.
-3. Place the disc reading-side up.
-4. Add a protective plastic disc if available.
-5. Press down evenly using the pusher.
-6. Smooth the label from the center outward.
-7. Check for bubbles or lifted edges.
+* Purchase the official Avery Label Applicator.
+> **Note:** Good luck. Avery doesn't appear to sell the full-face label applicator anymore, and I was unable to find one anywhere during this project.
 
-Let the label settle before putting the disc into a case.
+* 3D print an applicator tool. I created a model designed to replicate the Avery tool:
+  * [DIY Disc Label Alignment Tool](https://www.printables.com/model/1735505-diy-disc-label-alignment-tool)
+* Create your own jig using the spindle that the blank discs were shipped in.
+* Eyeball it and hope for the best.
+
+Regardless of the method you choose, take your time.
+
+> **Warning:** Once the adhesive makes contact with the disc, there is very little opportunity for adjustment. Attempting to reposition the label usually damages it.
+
+When applying the label:
+
+* Apply even pressure across the entire surface.
+* Work outward from the center.
+* Remove any air bubbles.
+* Ensure the label is fully adhered around the outer edge.
+
+A smooth, bubble-free application is just as important as proper alignment.
+
+Once the label has been applied, allow it to settle for a short period before placing the disc into a drive.
+
 
 ---
 
-# Step 12: Design Blu-ray Case Covers
+# Step 12: Blu-ray Case Covers
 
-For multi-disc Blu-ray cases, design a full wraparound insert:
+It's time to finish the project with some cover art.
+
+## Included Cover Artwork
+
+I've included PDF versions of the cover art I used for my own collection:
 
 ```text
-[Back Cover] [Spine] [Front Cover]
+├───Project Files
+│   ├───Case Covers
+│   │   ├───PDF
 ```
 
-Include:
+If you're happy with the design, simply print the PDFs and skip ahead to the printing section.
 
-* Series title
-* Case number
-* Disc numbers
-* Arc list
-* Episode/chapter range
-* Simple artwork
-* Optional screenshots or saga labels
+## Customizing the Covers
 
-Example:
+If you'd like to make changes—or if you're using individual Blu-ray cases instead of an 8-disc case—I have also included the original project files and source assets:
+
+```text
+├───Project Files
+│   ├───Case Covers
+│   │   ├───Canva Files
+│   │   ├───Paintdotnet
+│   │   └───Source Assets
+```
+
+The Canva template used for the covers can be found [**here**](https://canva.link/kysxnthcchak6o9)
+
+> **Note:** If you are using individual Blu-ray cases, you will likely need to adjust the spine width to match your case dimensions.
+>
+> ```text
+> [Back Cover] [Spine] [Front Cover]
+> ```
+
+## My Case Layout
+
+For reference, I split the collection into two 8-disc cases:
 
 ```text
 Case 1:
+The Grand Line Era
 East Blue to Fishman Island
 Discs 1–8
 
 Case 2:
+The New World Era
 Punk Hazard to Egghead
 Discs 9–16
 ```
 
-Glossy paper around 120 gsm is a good target. It is thin enough to fit in a Blu-ray sleeve but nicer than regular printer paper.
+## Printing
 
-For only one or two covers, using Office Depot, Staples, FedEx Office, or another print shop may be easier than buying a large pack of specialty paper.
+Glossy paper around **120 GSM** is a good target. It is thin enough to fit inside a Blu-ray sleeve while looking noticeably nicer than standard printer paper.
 
----
+If you only need one or two covers, it may be easier to use a local print shop such as Office Depot, Staples, or FedEx Office rather than purchasing an entire pack of specialty paper.
 
-# Step 13: Final Assembly
+> **Note:** The 8-disc case covers are slightly too large to fit comfortably on standard Letter paper without borderless printing. My printer only allows borderless printing when using photo paper, which is what I ended up using.
 
-After every disc is burned, tested, labeled, and placed into the case:
+## Trimming and Fitting
 
-* Confirm disc order
-* Confirm labels match disc numbers
-* Confirm the case cover matches the disc range
-* Check that all discs lock securely into the case
-* Store the project files and scripts somewhere safe
+Before printing the final version, perform a few test prints and make any necessary adjustments.
 
-Recommended backup files:
+Once you're happy with the alignment:
 
-* Final stitched MKVs
-* Authoring project files
-* Disc label designs
-* Blu-ray cover designs
-* Scripts used for renaming, probing, and conversion
+* Trim the cover carefully.
+* Use a straight edge and hobby knife, razor blade, or paper cutter for the cleanest results.
+* Insert the finished cover into the Blu-ray sleeve and verify the fit before making additional copies.
 
----
+## Finished!
 
-# Troubleshooting Notes
+Congratulations! You now have a very official-looking physical collection of One Pace.
 
-## The authoring software rejects a stitched file
-
-Usually this means one or more source files do not match.
-
-Check:
-
-* Resolution
-* Framerate
-* Audio codec
-* Audio sample rate
-* Pixel format
-
-Normalize the mismatched file and try again.
-
-## The disc is too large
-
-Options:
-
-* Lower the target bitrate
-* Split the disc into two discs
-* Put one large arc by itself
-* Remove extras or special episodes
-* Re-author using fewer menu assets
-
-## The menu disappears when there is only one track
-
-Some authoring software may skip the top menu if there is only one title/track.
-
-Possible workaround:
-
-* Add a second small title
-* Split the arc into multiple logical tracks
-* Check project/menu settings for “always show top menu”
-* Use chapter menus if top menus are unavailable
-
-## The video has black bars
-
-Black bars may be part of the actual video image, not just player formatting.
-
-Check the real encoded resolution with FFprobe.
-
-A file can be 1920x1080 while still containing 4:3 content with black bars baked into the image.
-
-## The PS5 does not play data discs properly
-
-The PS5 is not ideal for Blu-ray data-disc playback. Authored Blu-ray Video discs are much more compatible than MKV files burned as raw data.
 
 ---
 
-# Useful FFmpeg Commands
+# Step 13: Enjoy!
 
-## Check Resolution
+Congratulations! You have successfully spent an unreasonable amount of time creating a custom Blu-ray collection for a fan edit of a 1000+ episode anime.
 
-```powershell
-ffprobe -v error -select_streams v:0 `
--show_entries stream=width,height `
--of csv=s=x:p=0 "input.mkv"
-```
+There is now only one remaining step:
 
-## Check Framerate
+**Watch One Pace.**
 
-```powershell
-ffprobe -v error -select_streams v:0 `
--show_entries stream=r_frame_rate `
--of default=noprint_wrappers=1:nokey=1 "input.mkv"
-```
-
-## Convert Audio to AC3
-
-```powershell
-ffmpeg -i "input.mkv" `
--c:v copy `
--c:a ac3 -b:a 192k `
-"output_ac3.mkv"
-```
-
-## Normalize to 1080p H.264 + AC3
-
-```powershell
-ffmpeg -i "input.mkv" `
--vf "scale=1920:1080" `
--c:v libx264 -crf 18 -preset slow `
--c:a ac3 -b:a 192k `
-"output_1080p_ac3.mkv"
-```
-
-## Normalize to 720p H.264 + AC3
-
-```powershell
-ffmpeg -i "input.mkv" `
--vf "scale=1280:720" `
--c:v libx264 -crf 18 -preset slow `
--c:a ac3 -b:a 192k `
-"output_720p_ac3.mkv"
-```
-
-## Stitch Compatible Files
-
-```powershell
-ffmpeg -f concat -safe 0 -i filelist.txt -c copy "stitched_output.mkv"
-```
+Good luck. See you in a few months.
 
 ---
 
-# Lessons Learned
-
-* Organize everything before you start authoring.
-* Normalize files before stitching.
-* Do not assume files match just because they look similar.
-* Short specials can cause annoying mismatches.
-* Blu-ray authoring software is picky.
-* 50 GB discs have less usable space than expected.
-* Testing before labeling saves wasted labels.
-* A clean naming convention makes the entire process easier.
-* Physical presentation takes almost as much planning as the video workflow.
-
----
-
-# Project Status
-
-The full collection has been organized, burned to Blu-ray, labeled, and packaged into two multi-disc Blu-ray cases.
-
-Final layout:
-
-```text
-Case 1:
-Discs 1–8
-East Blue through Fishman Island
-
-Case 2:
-Discs 9–16
-Punk Hazard through Egghead
-```
 
 This README serves as a reference guide for the full process and as documentation for anyone attempting a similar personal archival project.
