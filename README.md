@@ -593,6 +593,24 @@ Change the menus, artwork, music, fonts, navigation, or layouts however you like
 > Fortunately, this step requires no user interaction. Once everything is configured correctly, it is a good time to walk away, go to work, sleep, or watch some One Piece.
 
 
+## Output Time
+
+* It is time to output this project so we can have some files to burn to a disc.
+* Go to the *OUTPUT** Tab at the top
+* Select your Output folder location under output folder name
+    * Click **Browse...**
+    * I've already prepared an output folder for you
+    * Navigate to the output folder of the respective disc:
+    ├───Disc Authoring
+    │   ├───Disc01
+    │   │   └───Output
+    * Click **Select Folder**
+* Set **Target Size** to **Blu-ray Media (50GB) Size**
+* Leave **Burn to DVD/Blu-ray Disc** unchecked
+* Set **Post-Output Proces** to whatever you want
+* Double and Triple check your settings, you're about to commit.
+* Click **Start Output**
+
 
 
 # Step 9: Burn the Disc
