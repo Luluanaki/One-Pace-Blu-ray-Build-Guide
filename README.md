@@ -244,7 +244,7 @@ This is primarily for organization and makes it easier to sort files alphabetica
 
 By default, TMPGEnc will label episodes as **Chapter 1**, **Chapter 2**, **Chapter 3**, etc. The source filenames are not shown in the Blu-ray menus unless you manually customize the menu titles during authoring.
 
-
+[Here](https://github.com/Luluanaki/One-Pace-Blu-ray-Build-Guide/tree/82cb970d23b4d620714037a5c6df4f174cfb2e79/References/Scripts/Renaming) are a few optional PowerShell scripts that can automatically rename entire arcs into a consistent format. They are especially useful when organizing files from multiple sources with different naming conventions.
 
 ---
 
