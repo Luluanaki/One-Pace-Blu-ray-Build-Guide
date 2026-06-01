@@ -1,6 +1,22 @@
 # PowerShell Renaming Scripts
 
-These scripts are optional, but useful if you want to quickly rename entire arcs into a consistent format before importing them into TMPGEnc.
+These scripts are optional, but can save a significant amount of time when renaming entire arcs into a consistent format before importing them into TMPGEnc.
+
+**Important:** Always leave `$PreviewOnly = $true` enabled the first time you run a script. There is no built-in undo feature if a file is renamed incorrectly—a lesson I learned the hard way. Verify that the proposed filenames look correct before performing the actual rename, especially when working with files from multiple sources that use different naming conventions.
+
+### Helpful Tips
+
+* Once you are inside the folder containing the arc files, right-click an empty area in Windows Explorer and select **Open in Terminal**. This will open PowerShell in the correct directory automatically.
+
+* Copy the script into a text editor such as Notepad and update the configurable values before running it:
+
+```powershell
+$ArcNumber = "01"
+$ArcName = "Romance Dawn"
+```
+
+* After making your changes, copy the script into PowerShell and run it with `$PreviewOnly = $true` first. Once you are satisfied with the results, change it to `$false` and run the script again to perform the rename.
+
 
 Recommended naming format:
 
