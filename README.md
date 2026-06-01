@@ -93,15 +93,17 @@ The general workflow is:
 
 ## Core Tools
 
-* **[FFmpeg](https://www.gyan.dev/ffmpeg/builds/)**
-
-  * Used for video inspection, conversion, normalization, audio conversion, and chapter handling.
-  * A simple installation guide can be found [here](https://github.com/Luluanaki/One-Pace-Blu-ray-Build-Guide/blob/main/References/FFmpeg/README.md).
-
 * **[TMPGEnc Authoring Works 7](https://tmpgenc.pegasys-inc.com/en/download/taw7.html)**
 
   * Used for Blu-ray authoring, menu creation, chapter management, and disc structure generation.
   * The 30-day free trial was more than enough time for me to complete the entire project.
+    
+* **[FFmpeg](https://www.gyan.dev/ffmpeg/builds/)** *(optional, but useful for troubleshooting and compatibility issues)*
+
+  * May be needed if TMPGEnc does not accept a particular video file or if you need to convert, inspect, or repair source files.
+  * Can also be used for advanced workflows such as audio conversion, remuxing, normalization, and chapter handling.
+  * A simple installation guide can be found [here](https://github.com/Luluanaki/One-Pace-Blu-ray-Build-Guide/blob/main/References/FFmpeg/README.md).
+
 
 ---
 
@@ -195,13 +197,15 @@ In my case, the complete One Pace collection occupied approximately **254.42 GB*
 
 ### Download Speeds
 
-Many files are hosted through PixelDrain. While not required, I chose to purchase **one month of PixelDrain Premium ($5 USD at the time of writing)** to speed up the download process significantly.
+Expect the download process to take a while. I originally downloaded one arc at a time over the course of about a week before eventually deciding to support PixelDrain so I could download everything more efficiently.
+
+While not required, I purchased **one month of PixelDrain Premium ($5 USD at the time of writing)**, which significantly increased download speeds and allowed me to download the entire collection at once.
 
 This is entirely optional, but it made downloading the full collection much more convenient.
 
 ### Subbed Collection
 
-If you plan to create a subtitled version, episodes can be downloaded directly from the official One Pace website:
+If you plan to create a subbed version, episodes can be downloaded directly from the official One Pace website:
 
 * [One Pace](https://onepace.net/en)
 
@@ -219,7 +223,7 @@ As with the subtitled version, download the **highest quality version available*
 
 ### Optional: Dual Audio (Dubbed + Subbed)
 
-Including both English dubbed and Japanese audio tracks is possible, but requires additional processing to combine the streams before authoring.
+Including both English dubbed and Japanese audio tracks is theoretically possible, but requires additional processing to combine the streams before authoring.
 
 After testing the available One Pace releases, I found that the subbed versions use **burned-in subtitles** rather than separate subtitle tracks. As a result, creating a Blu-ray with both audio tracks and optional subtitles is not as straightforward as it may seem.
 
@@ -230,6 +234,9 @@ While dual audio may be possible with additional work, I do not currently recomm
 # Step 1: Organize the Source Files
 
 Start by placing each arc into its own folder and giving the files a consistent naming format.
+
+> **Note:** If you are creating a original Japenese audio, English subtitled collection and downloading everything from a single source (such as One Pace), you can generally skip the renaming step. The filenames may be messy, but they are usually already sorted correctly. Simply organizing the episodes into arc-specific folders is often sufficient.
+
 
 Example:
 
@@ -248,180 +255,302 @@ By default, TMPGEnc will label episodes as **Chapter 1**, **Chapter 2**, **Chapt
 
 ---
 
-# Step 2: Inspect the Files
+# A Note About Steps 2–6
 
-Before stitching or authoring anything, check each arc for consistency.
+Originally, this guide contained several additional steps covering:
 
-Important things to inspect:
+* Step 2: File inspection with FFprobe
+* Step 3: Resolution and framerate normalization
+* Step 4: Audio conversion to AC3
+* Step 5: MKV remuxing
+* Step 6: Arc stitching and chapter marker generation
 
-* Resolution
-* Framerate
-* Video codec
-* Pixel format
-* Audio codec
-* Audio sample rate
-* Number of audio channels
+I spent a considerable amount of time developing and testing workflows for all of the above. My assumption was that Blu-ray authoring software would require highly standardized source files in order to produce reliable results. This was largely based on my experience with free tools such as MultiAVCHD, which frequently struggled with mixed source files and is no longer actively supported.
 
-Example FFprobe command:
+After completing the entire project and performing additional testing, I discovered that most of this work was unnecessary.
 
-```powershell
-Get-ChildItem *.mkv | ForEach-Object {
-    Write-Host "==== $($_.Name) ===="
-    ffprobe -v error -select_streams v:0 `
-        -show_entries stream=codec_name,profile,width,height,pix_fmt,level,r_frame_rate `
-        -of default=noprint_wrappers=1 "$($_.FullName)"
+TMPGEnc Authoring Works handled mixed resolutions, framerates, aspect ratios, codecs, and individual episode files far better than I initially expected. In many cases, the software simply took care of these differences automatically.
 
-    ffprobe -v error -select_streams a:0 `
-        -show_entries stream=codec_name,sample_rate,channels `
-        -of default=noprint_wrappers=1 "$($_.FullName)"
-}
-```
+As a result, the vast majority of users can safely skip what would have been Steps 2–6 and proceed directly to Step 7.
 
-The goal is to catch mismatches before they cause problems during stitching or Blu-ray authoring.
-
----
-
-# Step 3: Normalize Problem Files
-
-Some arcs may contain mixed resolutions, mixed framerates, or different audio formats.
-
-Common examples:
-
-* One file is 1080p while the rest are 720p
-* Some files are 24 fps while others are 23.976 fps
-* Audio differs between AAC and AC3
-* One short special episode does not match the rest of the arc
-
-When possible, normalize the odd file to match the majority of the arc.
-
-Example: downscaling one 1080p file to 720p:
-
-```powershell
-ffmpeg -i "input.mkv" `
--vf "scale=1280:720" `
--c:v libx264 -crf 18 -preset slow `
--c:a ac3 -b:a 192k `
-"output_720p.mkv"
-```
-
-For Blu-ray compatibility, AC3 audio is often safer than AAC.
-
----
-
-# Step 4: Decide Disc Groupings
-
-Plan the disc layout before authoring.
-
-For this project, the collection was split into two major Blu-ray cases:
-
-```text
-Case 1:
-Discs 1–8
-East Blue through Fishman Island
-
-Case 2:
-Discs 9–16
-Punk Hazard through Egghead
-```
-
-The goal is to keep arcs grouped naturally and avoid awkward splits where possible.
-
-Sometimes a disc may contain multiple smaller arcs. Other times, a large arc may need its own disc.
-
----
-
-# Step 5: Stitch Episodes
-
-Some Blu-ray authoring software behaves better when episodes are stitched into larger arc files or disc sections.
-
-Use FFmpeg’s concat demuxer.
-
-Create a text file like this:
-
-```text
-file '01 - Romance Dawn 01.mkv'
-file '01 - Romance Dawn 02.mkv'
-file '01 - Romance Dawn 03.mkv'
-```
-
-Then run:
-
-```powershell
-ffmpeg -f concat -safe 0 -i filelist.txt -c copy "Romance Dawn Stitched.mkv"
-```
-
-If `-c copy` fails, the files are not truly compatible and need to be normalized first.
-
----
-
-# Step 6: Add Chapters
-
-Chapters are useful when multiple episodes are stitched into one file.
-
-They allow you to jump between episodes from the Blu-ray chapter menu.
-
-Chapters can be added with FFmpeg metadata or through authoring software, depending on your workflow.
-
-A basic chapter metadata file looks like:
-
-```text
-;FFMETADATA1
-
-[CHAPTER]
-TIMEBASE=1/1000
-START=0
-END=1200000
-title=Episode 01
-
-[CHAPTER]
-TIMEBASE=1/1000
-START=1200000
-END=2400000
-title=Episode 02
-```
-
-Then mux it:
-
-```powershell
-ffmpeg -i "input.mkv" -i chapters.txt -map_metadata 1 -codec copy "output_with_chapters.mkv"
-```
+The scripts, tools, and references related to those steps have been left in this repository for anyone interested in the more advanced workflow, but they should be considered optional rather than required. Unless you encounter a specific issue during authoring, I recommend keeping things simple and letting TMPGEnc do the heavy lifting.
 
 ---
 
 # Step 7: Author the Blu-ray
 
-Import the final stitched files into TMPGEnc Authoring Works or another Blu-ray authoring program.
+You'll be happy to know that most of the heavy lifting has already been done. This repository includes pre-built TMPGEnc Authoring Works 7 projects for all 16 discs, complete with menu layouts, navigation, artwork and music.
 
-Recommended settings:
+Your primary tasks will be:
 
-* Blu-ray Video project
-* Use top menus when possible
-* Create track menus / chapter menus
-* Use arc names as titles
-* Use episode names or numbers as chapters
-* Avoid unnecessary re-encoding when possible
+* Importing the episode files
+* Adjusting bitrate to fit the disc
+* Updating chapter thumbnails
+* Optionally renaming chapters
+* Generating the final Blu-ray output
 
-Watch disc size carefully. A 50 GB Blu-ray does not provide a full 50 GiB of usable space. In many authoring programs, the usable size is closer to about 44.7 GiB.
+For those who want to create their own menu designs, the included projects should still serve as useful templates.
+
+
+## Understanding Bitrate
+
+> **Note:** If you're familiar with Blu-ray authoring, seeing a target bitrate of **4 Mbps** may seem absurdly low.
+>
+> Commercial Blu-rays often use bitrates in the **20–40 Mbps** range, and even many home video encodes target **10 Mbps** or higher.
+>
+> Fortunately, anime compresses extremely well due to its large areas of flat color, clean line art, relatively low visual complexity, and frequent static scenes. A bitrate that would look terrible on a live-action film can still look surprisingly good on anime.
+>
+> Another important consideration is the source material itself. Most One Pace releases ultimately originate from web streams, meaning the video has already been compressed before it ever reaches your hard drive.
+>
+> Authoring a Blu-ray at **30 Mbps** does not magically restore detail that was lost in the source. The final quality can only ever be as good as the source material.
+>
+> For this project, I found that approximately **4 Mbps** provided a good balance between visual quality and storage efficiency, allowing a surprising amount of content to fit on a single 50 GB disc.
+>
+> In fact, I ran comparison tests on a one-minute clip from a visually complex episode, encoding it at **16 Mbps**, **8 Mbps**, **4 Mbps**, and **2 Mbps**. Even at **2 Mbps**, I couldn't for the life of me spot any meaningful difference between it and the original One Pace source during normal viewing.
+>
+> After that I became far less concerned with bitrate than I was at the start of this project.
+
+
+
+
+## Import the Video Files
+
+1. Install **[TMPGEnc Authoring Works 7](https://tmpgenc.pegasys-inc.com/en/download/taw7.html)**.
+
+   * The free trial is sufficient for this project.
+
+2. Open the appropriate project file:
+
+```text
+├───Project Files
+│   ├───Disc Authoring
+│   │   ├───Disc01
+│   │   │   ├───Disc01
+|   |   |   |   ├───Disc01.taw7
+```
+
+3. Click the **SOURCE** tab.
+
+4. On the left side, you'll see tracks that have already been created for each arc.
+
+5. Select the desired track and drag all episodes from that arc into the track.
+
+6. When prompted, select:
+
+* **Add without Opening Clip Edit Window**
+* **Add to Current Track**
+* Enable:
+
+```text
+Run this selection automatically in the future
+```
+
+8. Repeat for all remaining arcs on the disc.
 
 ---
 
-# Step 8: Manage Bitrate and Disc Size
+## Verify Chapter Structure
 
-If the authored project is too large, the authoring software may lower bitrate to make it fit.
+Each imported episode should appear as a separate chapter entry.
 
-This is not always bad, but the more compression you apply, the more quality you risk losing.
+For most releases, each episode should show:
 
-General guidance:
+```text
+Chapters: 1
+```
 
-* Higher bitrate = better quality, larger file
-* Lower bitrate = more content, lower quality
-* 5 Mbps can fit a lot of DVD-ish quality content
-* 12–16 Mbps looks better but fills discs much faster
-* Long arcs may need their own disc
+Check all imported episodes before proceeding.
 
-If a disc is only slightly oversized, reducing bitrate may be acceptable. If it is massively oversized, split the content across discs instead.
+### If an Episode Contains Multiple Chapters
+
+Some fan edits include embedded chapter markers after the opener. While helpful for normal viewing, they create additional chapter entries that interfere with the clean one-chapter-per-episode structure used by the Blu-ray menus.
+ 
+To remove them:
+
+1. Double-click the episode to Open the **Clip Editing** window.
+2. Locate the chapter list on the left.
+3. Keep only the chapter at:
+
+```text
+00:00:00.00
+```
+4. Delete all remaining chapters by right clicking and **Delete**.
+
+The goal is to maintain one chapter entry per episode for cleaner chapter selection menus.
 
 ---
+
+## Adjust Bitrate
+
+1. Look at the **Estimated Size** bar near the bottom of the window.
+
+2. Right-click the bar and select the appropriate disc size:
+
+```text
+Blu-ray Media 50GB (4)
+```
+
+or whichever disc size you intend to use.
+
+3. Go to the **OUTPUT** tab at the top.
+
+4. Ensure:
+
+```text
+Target Size: None
+```
+
+This prevents TMPGEnc from automatically adjusting the bitrate while you're making manual decisions and allows the estimated size to accurately reflect your current settings.
+
+
+5. Return to the **SOURCE** tab at the top.
+
+6. For each track:
+
+```text
+Settings → Video
+```
+
+7. Set:
+
+```text
+Bitrate: 4 Mbps
+```
+
+for every track.
+
+### Fine-Tuning
+
+If the estimated size is significantly below the disc capacity, increase bitrate in small increments:
+
+```text
+4.0 Mbps
+4.5 Mbps
+5.0 Mbps
+```
+
+until the project is utilizing most of the available space.
+
+Try to stick to one consistent Bitrate for the entire disc.
+
+I generally try not to go below **4 Mbps**.
+
+> **Note:** TMPGEnc may automatically adjust the bitrate when a **Target Size** is specified, but I am not entirely sure what calculations it performs behind the scenes. For that reason, I prefer to temporarily set **Target Size** to **None** while dialing in my bitrate settings. This allows me to see the estimated disc size without any automatic adjustments being applied.
+>
+> We will still set the target size to match the disc capacity during the final output stage.
+
+---
+
+## Update Chapter Thumbnails
+
+1. Open the **MENU** tab.
+
+2. Navigate to a chapter menu page.
+
+3. Double-click a chapter thumbnail.
+
+**Important:** Avoid accidentally dragging the thumbnail object itself. If something moves unexpectedly, press:
+
+```text
+Ctrl + Z
+```
+
+3. In the thumbnail editor:
+
+* Scrub through the timeline
+* Find an interesting frame
+* Click **Set Thumbnail Position**
+
+4. Click **OK**
+
+Repeat for all chapters.
+
+A good thumbnail makes it much easier to identify episodes at a glance.
+
+### Aspect Ratio Note
+
+For some early One Piece episodes with a 4:3 image, the thumbnail boxes have been scaled to **134%** so they fill the available menu space.
+
+This affects only the menu thumbnails and does **not** alter video playback.
+
+Later 16:9 episodes typically use:
+
+```text
+Scale: 100%
+```
+
+---
+
+## Rename Chapter Titles (Optional)
+
+By default, TMPGEnc names episodes:
+
+```text
+Chapter 1
+Chapter 2
+Chapter 3
+```
+
+You may prefer more descriptive names.
+
+For example:
+
+```text
+01 - The Dawn of Adventure
+02 - They Call Him Straw Hat Luffy
+```
+
+To change a title:
+
+1. Double-click the chapter name.
+2. Edit the text.
+3. Adjust font size or enable **Stretch to Fit** if necessary.
+
+---
+
+## Test the Disc
+
+Before generating output:
+
+1. Open the **SIMULATION** tab.
+2. Click **START**.
+
+This allows you to test:
+
+* Menu navigation
+* Chapter selection
+* Playback behavior
+* Remote control actions
+
+The preview quality is lower than the final disc and should not be used to judge video quality.
+
+---
+
+## Disc Information (Optional)
+
+To customize the title and thumbnail displayed by your Blu-ray player:
+
+1. Open the **SOURCE** tab.
+2. Click **Disc Settings**.
+
+You can modify:
+
+* Disc title
+* Thumbnail image
+* Disc metadata
+
+The **Language** field refers to the disc's metadata and menu language, not the audio language.
+
+---
+
+## Make It Your Own
+
+Feel free to customize the project further.
+
+Change the menus, artwork, fonts, navigation, or layouts however you like. The included projects are intended to provide a solid starting point rather than a strict template.
+
+
+
 
 # Step 9: Burn the Disc
 
