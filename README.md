@@ -219,7 +219,7 @@ The following guide provides download links and recommended viewing order inform
 
 * [One Pace Dub Watch Guide](https://www.reddit.com/r/onepace/comments/1rtpukk/one_pace_dub_watch_guide/)
 
-As with the subtitled version, download the **highest quality version available** whenever possible.
+As with the subbed version, download the **highest quality version available** whenever possible.
 
 ### Optional: Dual Audio (Dubbed + Subbed)
 
@@ -235,7 +235,7 @@ While dual audio may be possible with additional work, I do not currently recomm
 
 Start by placing each arc into its own folder and giving the files a consistent naming format.
 
-> **Note:** If you are creating a original Japenese audio, English subtitled collection and downloading everything from a single source (such as One Pace), you can generally skip the renaming step. The filenames may be messy, but they are usually already sorted correctly. Simply organizing the episodes into arc-specific folders is often sufficient.
+> **Note:** If you are creating a original Japenese audio, English subbed collection and downloading everything from a single source (such as One Pace), you can generally skip the renaming step. The filenames may be messy, but they are usually already sorted correctly. Simply organizing the episodes into arc-specific folders is often sufficient.
 
 
 Example:
@@ -279,7 +279,7 @@ The scripts, tools, and references related to those steps have been left in this
 
 # Step 7: Author the Blu-ray
 
-You'll be happy to know that most of the heavy lifting has already been done. This repository includes pre-built TMPGEnc Authoring Works 7 projects for all 16 discs, complete with menu layouts, navigation, artwork and music.
+You'll be happy to know that most of the hard work has already been done. This repository includes pre-built TMPGEnc Authoring Works 7 projects for all 16 discs, complete with menu layouts, navigation, artwork and music.
 
 Your primary tasks will be:
 
@@ -349,7 +349,7 @@ For those who want to create their own menu designs, the included projects shoul
 Run this selection automatically in the future
 ```
 
-8. Repeat for all remaining arcs on the disc.
+7. Repeat for all remaining arcs on the disc.
 
 ---
 
@@ -480,11 +480,7 @@ For some early One Piece episodes with a 4:3 image, the thumbnail boxes have bee
 
 This affects only the menu thumbnails and does **not** alter video playback.
 
-Later 16:9 episodes typically use:
-
-```text
-Scale: 100%
-```
+Later 16:9 episodes typically use **100%**.
 
 ---
 
@@ -532,27 +528,29 @@ This allows you to test:
 
 The preview quality is lower than the final disc and should not be used to judge video quality.
 
-> **Note:** The simulation mode is also a great opportunity to test the menu music and hear how it loops.
->
-> All of the discs use instrumental versions of the corresponding opening themes for their respective sagas. If you would like to change the music, go to the **MENU** tab and double-click the background on any menu page. This will open **Menu Item Edit**. From there, navigate to the **BGM Audio Selection** tab.
->
-> Here you can adjust:
->
-> * Source File
-> * Volume
-> * Fade-in and fade-out
-> * Playback start position
-> * Which section of the song is used
->
-> In general, I configured the title menu to begin at the start of the song, while the remaining menus begin near the start of the chorus. Most of my menu loops are set to **60 seconds** long before repeating.
->
-> To change the menu duration, click **Blu-ray Global Menu Settings** in the upper-left corner, then open the **Motion Menu** tab and adjust:
->
-> ```text
-> BGM/Motion Menu Duration
-> ```
->
-> Keep in mind that longer motion menus consume additional disc space, although the impact is usually fairly small.
+### Hear the Menu Music
+The simulation mode is also a great opportunity to test the menu music and hear how it loops.
+
+ All of the discs use instrumental versions of the corresponding opening themes for their respective sagas. If you would like to change the music, go to the **MENU** tab and double-click the background on any menu page. This will open **Menu Item Edit**. From there, navigate to the **BGM Audio Selection** tab.
+
+ Here you can adjust:
+
+ * Source File
+ * Volume
+ * Fade-in and fade-out
+ * Playback start position
+ * Which section of the song is used
+ * Loop Behavior
+
+ In general, I configured the title menu to begin at the start of the song, while the remaining menus begin near the start of the chorus. Most of my menu loops are set to **60 seconds** long before repeating.
+
+ To change the menu duration, click **Blu-ray Global Menu Settings** in the upper-left corner, then open the **Motion Menu** tab and adjust:
+
+ ```text
+ BGM/Motion Menu Duration
+ ```
+
+ Keep in mind that longer motion menus consume additional disc space, although the impact is usually fairly small.
 
 ---
 
@@ -575,10 +573,9 @@ The **Language** field refers to the disc's metadata and menu language, not the 
 
 ## Make It Your Own
 
-Feel free to customize the project further.
+The included projects reflect the choices I made for my own collection, but they are by no means the only way to author these discs.
 
-Change the menus, artwork, music, fonts, navigation, or layouts however you like. The included projects are intended to provide a solid starting point rather than a strict template.
-
+Feel free to customize the menus, artwork, music, fonts, navigation, chapter layouts, or anything else to suit your own preferences. Whether you make a few small adjustments or completely redesign everything from scratch, the goal is to create a collection that you're happy with.
 
 ---
 
@@ -637,7 +634,7 @@ We'll handle the burning process separately in the next step.
 
 10. Click **Start Output** and let TMPGEnc do its thing.
 
-
+---
 # Step 9: Burn the Disc
 
 ## Open the Disc Writing Tool
@@ -683,7 +680,7 @@ This is the name that will appear on your Blu-ray player's interface when the di
 
 ## Test the Finished Disc
 
-Before applying a label, test the disc in your Blu-ray player.
+Before applying a label, test the disc in your Blu-ray player (PS5 for me).
 
 Verify:
 
@@ -706,9 +703,19 @@ Once you are satisfied with the disc, repeat **Steps 7–9** for the remaining d
 
 ---
 
-# Step 10: Design Disc Labels
+# Step 10: Print Disc Labels
 
-Disc labels can make the final set look much more professional.
+The digital work is finally done! it's time to make this project look pretty.
+
+At this point you will need [**Avery Full-Face Disc Labels**](https://a.co/d/02zhhNVN) and access to a descent printer.
+
+## Test Print
+I recommend doing a test print before wasting one of your Avery Labels, if you are doing a 16 disc project there are only 2 pages to spare.
+
+In my experience the alignment of the PDFs outputted from the AVERY design website were slightly off, 2mm too far right and 1 mm too far up. I suppose I can include alignment adjusted PDFs as well.
+
+
+
 
 Use full-face small-hole Blu-ray/DVD labels, such as Avery-style labels.
 
