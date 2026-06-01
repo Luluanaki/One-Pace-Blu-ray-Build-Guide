@@ -582,49 +582,127 @@ Change the menus, artwork, music, fonts, navigation, or layouts however you like
 
 ---
 
-# Step 9: Output Authored Folder
+# Step 8: Output Authored Folder
 
 > **Note:** This step will take a long time—typically **5–10 hours per disc** in my experience—and that does not include the time required to burn the finished Blu-ray.
 >
-> The reason is that TMPGEnc is not simply copying your video files onto the disc. It is decoding every episode, re-encoding the video to your chosen Blu-ray settings, generating all menu assets, creating chapter structures, multiplexing audio and video streams, and finally building a Blu-ray-compliant folder structure.
+> TMPGEnc is not simply copying your video files onto the disc. It is decoding every episode, re-encoding the video to Blu-ray-compliant settings, generating menu assets, creating chapter structures, multiplexing audio and video streams, and finally building a Blu-ray-compliant folder structure.
 >
 > During this process, your CPU will likely be under heavy load for hours. The exact time depends on your processor, storage speed, number of episodes, bitrate settings, and whether hardware acceleration is available.
 >
-> Fortunately, this step requires no user interaction. Once everything is configured correctly, it is a good time to walk away, go to work, sleep, or watch some One Piece.
+> Fortunately, this step requires very little user interaction. Once everything is configured correctly, it is a good time to walk away, go to work, sleep, or watch some One Piece.
 
+## Configure Output Settings
 
-## Output Time
+1. Click the **OUTPUT** tab at the top of TMPGEnc.
 
-* It is time to output this project so we can have some files to burn to a disc.
-* Go to the *OUTPUT** Tab at the top
-* Select your Output folder location under output folder name
-    * Click **Browse...**
-    * I've already prepared an output folder for you
-    * Navigate to the output folder of the respective disc:
-    ├───Disc Authoring
-    │   ├───Disc01
-    │   │   └───Output
-    * Click **Select Folder**
-* Set **Target Size** to **Blu-ray Media (50GB) Size**
-* Leave **Burn to DVD/Blu-ray Disc** unchecked
-* Set **Post-Output Proces** to whatever you want
-* Double and Triple check your settings, you're about to commit.
-* Click **Start Output**
+2. Under **Output Folder Name**, click **Browse...**
 
+3. Navigate to the output folder for the disc you are authoring:
+
+```text
+Disc Authoring
+└── Disc01
+    └── Output
+```
+
+4. Click **Select Folder**.
+
+> **Note:** I have already included an **Output** folder for each disc project. This is where TMPGEnc will generate the **BDMV** and **CERTIFICATE** folders needed for burning the final Blu-ray.
+
+5. Set:
+
+```text
+Target Size: Blu-ray Media (50GB) Size
+```
+
+6. Leave the following option unchecked:
+
+```text
+Burn to DVD/Blu-ray Disc
+```
+
+We'll handle the burning process separately in the next step.
+
+7. Set **Post-Output Process** to whatever behavior you prefer.
+
+8. Make sure your computer will not go to sleep during the output or burn process.
+
+   * In the Windows search bar, type **Sleep** and open **Power, sleep, and battery settings**.
+   * Under **Screen, sleep, & hibernate timeouts**, set **Sleep** and **Hibernate** to **Never**.
+
+9. Double- and triple-check your settings. Once the output process begins, you'll likely be waiting several hours before discovering any mistakes.
+
+![Output Settings](References/Guide%20Images/01_Output.png)
+
+10. Click **Start Output** and let TMPGEnc do its thing.
 
 
 # Step 9: Burn the Disc
 
-After authoring, burn the Blu-ray structure to a BD-R or BD-R DL disc.
+## Open the Disc Writing Tool
 
-Recommended practice:
+Once output is complete, TMPGEnc will prompt you to open the Disc Writing Tool. Open it.
 
-* Use a slower burn speed for reliability
-* Verify the disc after burning
-* Test the disc in a Blu-ray player or software player
-* Check menus, chapters, audio, and playback order
+If you missed the prompt, you can access it manually:
 
-Do not label the disc until you know the burn works.
+* **START** tab in the top left
+* Under **Tools** click **Disc Writing Tool**
+
+## Configure Burn Settings
+
+Before starting the burn:
+
+1. Insert the correct blank Blu-ray disc into your writer.
+2. I recommend using a Sharpie to temporarily identify the disc so you don't accidentally mix it up later.
+3. Under **Content Folder**, click **Browse** and select the disc's **Output** folder containing the generated **BDMV** and **CERTIFICATE** folders.
+4. Verify that the correct Blu-ray drive is selected.
+5. Set **Writing Speed** to **2x**.
+
+> **Note:** I strongly recommend avoiding the maximum writing speed. Even at 2x, the burn process typically takes only 1–2 hours. For archival projects like this, I prefer to prioritize reliability and longevity over saving a few minutes.
+
+6. Set the **Disc Label** to match the disc you are authoring. For example:
+
+ ```text
+ One Pace 01 - East Blue
+ ```
+
+This is the name that will appear on your Blu-ray player's interface when the disc is inserted.
+
+> **Note:** One of my finished discs has the wrong disc number in the label metadata. It's not worth wasting another BD-R to fix, but it does annoy me every time I see it. To be avoided.
+
+* Double- and triple-check all settings before proceeding.
+
+![Disc Writing Tool](References/Guide%20Images/02_DiscWriting.png)
+
+* Click **Write to Disc** in the upper-left corner and again let TMPGEnc do its thing.
+
+> **Warning:** Unless you are using a rewritable disc (BD-RE), the burn process is a one-time operation. Once the burn process begins, there are no second chances. If the burn fails, is interrupted, the computer goes to sleep, or the power goes out, the disc is usually destined for the coaster pile.
+
+
+
+## Test the Finished Disc
+
+Before applying a label, test the disc in your Blu-ray player.
+
+Verify:
+
+* Menu navigation
+* Chapter selection
+* Audio playback
+* Video playback
+
+Watch at least a few minutes from several different parts of the disc to make sure everything behaves as expected.
+
+If you encounter visual corruption or playback issues, the cause is usually a bad burn, poor-quality media, or hardware issues rather than the authoring software itself.
+
+> **Important:** Do not apply the disc label until you have confirmed the burn was successful.
+
+## Repeat
+
+Once you are satisfied with the disc, repeat **Steps 7–9** for the remaining discs.
+
+> **Note:** I completed these steps over the course of a couple weeks, usually authoring and burning **1–2 discs per day**.
 
 ---
 
