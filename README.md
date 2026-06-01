@@ -326,15 +326,19 @@ For those who want to create their own menu designs, the included projects shoul
 │   ├───Disc Authoring
 │   │   ├───Disc01
 │   │   │   ├───Disc01
-|   |   |   |   ├───Disc01.taw7
+│   │   │   │   ├───Disc01.taw7
 ```
 
+> **Note:** Do not delete, move, or rename any of the files or folders included with the project archive, even if they appear unimportant. The `.taw7` project references these files directly, including menu artwork, button graphics, menu music, and other assets. Removing them will cause the project to fail to load or prevent it from being archived correctly.
+
+    
 3. Click the **SOURCE** tab.
 
 4. On the left side, you'll see tracks that have already been created for each arc.
 
 5. Select the desired track and drag all episodes from that arc into the track.
-
+    * Be sure to delete the placeholder video files from each track during this step
+      
 6. When prompted, select:
 
 * **Add without Opening Clip Edit Window**
@@ -467,6 +471,9 @@ Repeat for all chapters.
 
 A good thumbnail makes it much easier to identify episodes at a glance.
 
+> **Note:** Each disc folder includes a **Menu Screenshots** folder showing every menu page from my completed project. If you're unsure what a page is supposed to look like, use these screenshots as a reference to compare your thumbnails, chapter titles, and overall menu layout.
+
+ 
 ### Aspect Ratio Note
 
 For some early One Piece episodes with a 4:3 image, the thumbnail boxes have been scaled to **134%** so they fill the available menu space.
@@ -499,6 +506,7 @@ For example:
 01 - The Dawn of Adventure
 02 - They Call Him Straw Hat Luffy
 ```
+One Pace conveniently stores the episode titles in the video metadata, making it easy to reference the official episode names if you choose to customize them.
 
 To change a title:
 
@@ -524,6 +532,28 @@ This allows you to test:
 
 The preview quality is lower than the final disc and should not be used to judge video quality.
 
+> **Note:** The simulation mode is also a great opportunity to test the menu music and hear how it loops.
+>
+> All of the discs use instrumental versions of the corresponding opening themes for their respective sagas. If you would like to change the music, go to the **MENU** tab and double-click the background on any menu page. This will open **Menu Item Edit**. From there, navigate to the **BGM Audio Selection** tab.
+>
+> Here you can adjust:
+>
+> * Source File
+> * Volume
+> * Fade-in and fade-out
+> * Playback start position
+> * Which section of the song is used
+>
+> In general, I configured the title menu to begin at the start of the song, while the remaining menus begin near the start of the chorus. Most of my menu loops are set to **60 seconds** long before repeating.
+>
+> To change the menu duration, click **Blu-ray Global Menu Settings** in the upper-left corner, then open the **Motion Menu** tab and adjust:
+>
+> ```text
+> BGM/Motion Menu Duration
+> ```
+>
+> Keep in mind that longer motion menus consume additional disc space, although the impact is usually fairly small.
+
 ---
 
 ## Disc Information (Optional)
@@ -531,7 +561,7 @@ The preview quality is lower than the final disc and should not be used to judge
 To customize the title and thumbnail displayed by your Blu-ray player:
 
 1. Open the **SOURCE** tab.
-2. Click **Disc Settings**.
+2. Click **Disc Settings** in the upper-left corner.
 
 You can modify:
 
@@ -547,7 +577,20 @@ The **Language** field refers to the disc's metadata and menu language, not the 
 
 Feel free to customize the project further.
 
-Change the menus, artwork, fonts, navigation, or layouts however you like. The included projects are intended to provide a solid starting point rather than a strict template.
+Change the menus, artwork, music, fonts, navigation, or layouts however you like. The included projects are intended to provide a solid starting point rather than a strict template.
+
+
+---
+
+# Step 9: Output Authored Folder
+
+> **Note:** This step will take a long time—typically **5–10 hours per disc** in my experience—and that does not include the time required to burn the finished Blu-ray.
+>
+> The reason is that TMPGEnc is not simply copying your video files onto the disc. It is decoding every episode, re-encoding the video to your chosen Blu-ray settings, generating all menu assets, creating chapter structures, multiplexing audio and video streams, and finally building a Blu-ray-compliant folder structure.
+>
+> During this process, your CPU will likely be under heavy load for hours. The exact time depends on your processor, storage speed, number of episodes, bitrate settings, and whether hardware acceleration is available.
+>
+> Fortunately, this step requires no user interaction. Once everything is configured correctly, it is a good time to walk away, go to work, sleep, or watch some One Piece.
 
 
 
