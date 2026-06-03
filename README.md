@@ -907,9 +907,9 @@ Once the label has been applied, allow it to settle for a short period before pl
 # Step 12: Blu-ray Case Covers
 
 <p align="center">
-  <img src="References/Guide Images/CaseFront.jpg" width="33%">
-  <img src="References/Guide Images/CaseBack.jpg" width="33%">
-  <img src="References/Guide Images/CaseSpine.jpg" width="33%">
+  <img src="References/Guide Images/CaseFront.jpg" width="30%">
+  <img src="References/Guide Images/CaseBack.jpg" width="30%">
+  <img src="References/Guide Images/CaseSpine.jpg" width="30%">
 </p>
 
 It's time to finish the project with some cover art.
