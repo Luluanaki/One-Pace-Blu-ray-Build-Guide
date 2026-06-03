@@ -17,22 +17,24 @@ A reproducible physical media project for One Pace, featuring Blu-ray disc artwo
 
 ## Overview
 
-This project documents the full process used to turn a large collection of One Piece arc-based video files into a polished physical Blu-ray collection.
+This project documents the full process used to turn a large collection of One Pace video files into a polished physical Blu-ray collection that looks and feels as official as possible.
+
+
 
 The general workflow is:
 
-1. Download / gather source episodes
-2. Organize files by arc
-3. Inspect video/audio properties
-4. Normalize inconsistent files
-5. Stitch episodes by arc or disc section
-6. Add chapters where useful
-7. Author Blu-ray discs with menus
-8. Burn to BD-R discs
-9. Design and print disc labels
-10. Apply labels with an alignment tool
-11. Design Blu-ray case covers
-12. Print, trim, and assemble the final cases
+* Step 0: Download and gather source episodes
+* Step 1: Name and organize files by arc
+
+* Step 2–6: Skip entirely. After extensive testing, these steps turned out to be unnecessary
+
+* Step 7: Author disc structure
+* Step 8: Generate Blu-ray output
+* Step 9: Burn to BD-R discs
+* Step 10: Print disc labels
+* Step 11: Apply disc labels
+* Step 12: Print and assemble case artwork
+* Step 13: Enjoy One Pace
 
 ---
 
@@ -106,7 +108,7 @@ The general workflow is:
   * Used for Blu-ray authoring, menu creation, chapter management, and disc structure generation.
   * The 30-day free trial was more than enough time for me to complete the entire project.
     
-* **[FFmpeg](https://www.gyan.dev/ffmpeg/builds/)** *(only necessary if there are compastibility issues)*
+* **[FFmpeg](https://www.gyan.dev/ffmpeg/builds/)** *(only necessary if there are compatibility issues)*
 
   * May be needed if TMPGEnc does not accept a particular video file or if you need to convert, inspect, or repair source files.
   * Can also be used for advanced workflows such as audio conversion, remuxing, normalization, and chapter handling.
@@ -243,7 +245,7 @@ While dual audio may be possible with additional work, I do not currently recomm
 
 Start by placing each arc into its own folder and giving the files a consistent naming format.
 
-> **Note:** If you are creating a original Japenese audio, English subbed collection and downloading everything from a single source (such as One Pace), you can generally skip the renaming step. The filenames may be messy, but they are usually already sorted correctly. Simply organizing the episodes into arc-specific folders is often sufficient.
+> **Note:** If you are creating a original Japanese audio, English subbed collection and downloading everything from a single source (such as One Pace), you can generally skip the renaming step. The filenames may be messy, but they are usually already sorted correctly. Simply organizing the episodes into arc-specific folders is often sufficient.
 
 
 Example:
@@ -285,7 +287,7 @@ The scripts, tools, and references related to those steps have been left in this
 
 ---
 
-# Step 7: Author the Blu-ray
+# Step 7: Author Disc Structure
 
 <p align="center">
   <img src="Project Files/Disc Authoring/Disc15/Menu Screenshots/00_0.jpg" width="75%">
@@ -300,7 +302,7 @@ The scripts, tools, and references related to those steps have been left in this
 </p>
 
 
-You'll be happy to know that most of the hard work has already been done. This repository includes pre-built TMPGEnc Authoring Works 7 projects for all 16 discs, complete with menu layouts, navigation, artwork and music.
+This is the satisfying, fun part. You'll be happy to know that most of the hard work has already been done. This repository includes pre-built TMPGEnc Authoring Works 7 projects for all 16 discs, complete with menu layouts, navigation, artwork and music.
 
 Your primary tasks will be:
 
