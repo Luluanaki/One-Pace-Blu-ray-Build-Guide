@@ -1,5 +1,5 @@
 # One Pace Blu-ray Build Guide
-A reproducible physical media project for One Pace, featuring Blu-ray disc artwork, case covers, Avery templates, printing instructions, and archival workflow documentation. Designed to help collectors build their own set. No video files included.
+A guide for building your own One Pace Blu-ray collection, including disc artwork, case covers, TMPGEnc project files, printing resources, and the workflow I used to create my own set. No video files included.
 
 
 > **Disclaimer:** This project is intended as a personal archival/workflow documentation project. It does not include or distribute copyrighted video files, fan edits, subtitles, or other copyrighted material.
