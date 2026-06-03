@@ -9,7 +9,9 @@ A reproducible physical media project for One Pace, featuring Blu-ray disc artwo
   <img src="References/Guide Images/CaseBack.jpg" width="33%">
   <img src="References/Guide Images/CaseSpine.jpg" width="33%">
 </p>
-
+<p align="center">
+  <img src="References/Guide Images/Discs.jpg" width="80%">
+</p>
 ---
 
 ## Overview
@@ -284,6 +286,19 @@ The scripts, tools, and references related to those steps have been left in this
 
 # Step 7: Author the Blu-ray
 
+<p align="center">
+  <img src="Project Files/Disc Authoring/Disc15/Menu Screenshots/00_0.jpg" width="75%">
+</p>
+
+<p align="center">
+  <img src="Project Files/Disc Authoring/Disc15/Menu Screenshots/00_1.jpg" width="75%">
+</p>
+
+<p align="center">
+  <img src="Project Files/Disc Authoring/Disc15/Menu Screenshots/01_1.jpg" width="75%">
+</p>
+
+
 You'll be happy to know that most of the hard work has already been done. This repository includes pre-built TMPGEnc Authoring Works 7 projects for all 16 discs, complete with menu layouts, navigation, artwork and music.
 
 Your primary tasks will be:
@@ -341,12 +356,10 @@ For those who want to create their own menu designs, the included projects shoul
 
 4. On the left side, you'll see tracks that have already been created for each arc.
 
+ 
+
 5. Select the desired track and drag all episodes from that arc into the track.
     * Be sure to delete the placeholder video files from each track during this step
-
-> **Note:** There is a small chance that TMPGEnc may reject one of your source files during import. In my own build, I encountered this issue with **Fishman Island 15 (FIXED GROUP SHOT)**.
->
-> If this happens, don't panic. A troubleshooting section is included at the end of the guide that covers how to identify and fix incompatible video files.
 
       
 6. When prompted, select:
@@ -360,6 +373,11 @@ Run this selection automatically in the future
 ```
 
 7. Repeat for all remaining arcs on the disc.
+
+<p align="center">
+  <img src="References/Guide Images/TMPGEncSource.png" width="80%">
+</p>
+
 
 ---
 
@@ -392,6 +410,9 @@ To remove them:
 
 The goal is to maintain one chapter entry per episode for cleaner chapter selection menus.
 
+<p align="center">
+  <img src="References/Guide Images/DeleteChapter.png" width="80%">
+</p>
 ---
 
 ## Adjust Bitrate
@@ -432,6 +453,10 @@ Bitrate: 4 Mbps
 ```
 
 for every track.
+
+<p align="center">
+  <img src="References/Guide Images/AdjustBitrate.png" width="80%">
+</p>
 
 ### Fine-Tuning
 
@@ -483,7 +508,11 @@ A good thumbnail makes it much easier to identify episodes at a glance.
 
 > **Note:** Each disc folder includes a **Menu Screenshots** folder showing every menu page from my completed project. If you're unsure what a page is supposed to look like, use these screenshots as a reference to compare your thumbnails, chapter titles, and overall menu layout.
 
- 
+ <p align="center">
+  <img src="References/Guide Images/Thumbnails.png" width="80%">
+</p>
+
+
 ### Aspect Ratio Note
 
 For some early One Piece episodes with a 4:3 image, the thumbnail boxes have been scaled to **134%** so they fill the available menu space.
@@ -514,6 +543,10 @@ For example:
 ```
 One Pace conveniently stores the episode titles in the video metadata, making it easy to reference the official episode names if you choose to customize them.
 
+ <p align="center">
+  <img src="References/Guide Images/ClipTitle.png" width="80%">
+</p>
+
 To change a title:
 
 1. Double-click the chapter name.
@@ -522,7 +555,7 @@ To change a title:
 
 ---
 
-## Test the Disc
+## Test the Menu
 
 Before generating output:
 
@@ -537,6 +570,10 @@ This allows you to test:
 * Remote control actions
 
 The preview quality is lower than the final disc and should not be used to judge video quality.
+
+ <p align="center">
+  <img src="References/Guide Images/MenuTest.png" width="80%">
+</p>
 
 ### Hear the Menu Music
 The simulation mode is also a great opportunity to test the menu music and hear how it loops.
@@ -578,6 +615,10 @@ You can modify:
 * Disc metadata
 
 The **Language** field refers to the disc's metadata and menu language, not the audio language.
+
+ <p align="center">
+  <img src="References/Guide Images/DiscTitle.png" width="80%">
+</p>
 
 ---
 
@@ -642,7 +683,7 @@ We'll handle the burning process separately in the next step.
 
 ![Output Settings](References/Guide%20Images/01_Output.png)
 
-10. Click **Start Output** and let TMPGEnc do its thing.
+10. Click **Start Output** in the bottom left and let TMPGEnc do its thing.
 
 ---
 # Step 9: Burn the Disc
