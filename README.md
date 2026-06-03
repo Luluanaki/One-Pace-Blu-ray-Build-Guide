@@ -5,9 +5,9 @@ A reproducible physical media project for One Pace, featuring Blu-ray disc artwo
 > **Disclaimer:** This project is intended as a personal archival/workflow documentation project. It does not include or distribute copyrighted video files, fan edits, subtitles, or other copyrighted material.
 
 <p align="center">
-  <img src="References/Guide Images/CaseFront.jpg" width="33%">
-  <img src="References/Guide Images/CaseBack.jpg" width="33%">
-  <img src="References/Guide Images/CaseSpine.jpg" width="33%">
+  <img src="References/Guide Images/CaseFront.jpg" width="30%">
+  <img src="References/Guide Images/CaseBack.jpg" width="30%">
+  <img src="References/Guide Images/CaseSpine.jpg" width="30%">
 </p>
 <p align="center">
   <img src="References/Guide Images/Discs.jpg" width="80%">
