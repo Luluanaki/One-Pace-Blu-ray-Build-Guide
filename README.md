@@ -4,20 +4,11 @@ A reproducible physical media project for One Pace, featuring Blu-ray disc artwo
 
 > **Disclaimer:** This project is intended as a personal archival/workflow documentation project. It does not include or distribute copyrighted video files, fan edits, subtitles, or other copyrighted material.
 
-<table>
-<tr>
-<td><img src="References/Guide Images/CaseFront.jpg" width="300"></td>
-<td><img src="References/Guide Images/CaseBack.jpg" width="300"></td>
-<td><img src="References/Guide Images/CaseSpine.jpg" width="300"></td>
-</tr>
-</table>
-<table>
-<tr>
-<td><img src="References/Guide Images/CaseFront.jpg" width="300"></td>
-<td><img src="References/Guide Images/CaseBack.jpg" width="300"></td>
-<td><img src="References/Guide Images/CaseSpine.jpg" width="300"></td>
-</tr>
-</table>
+<p align="center">
+  <img src="References/Guide Images/CaseFront.jpg" width="33%">
+  <img src="References/Guide Images/CaseBack.jpg" width="33%">
+  <img src="References/Guide Images/CaseSpine.jpg" width="33%">
+</p>
 
 ---
 
@@ -724,6 +715,10 @@ Once you are satisfied with the disc, repeat **Steps 7–9** for the remaining d
 
 # Step 10: Print Disc Labels
 
+<p align="center">
+  <img src="References/Guide Images/Discs.jpg" width="80%">
+</p>
+
 The digital work is finally done—it's time to make the project look pretty.
 
 At this point, you will need [**Avery Full-Face Disc Labels**](https://a.co/d/02zhhNVN) and access to a decent printer.
@@ -768,7 +763,7 @@ For that reason, I often created or modified artwork in external software such a
 
 If you plan to make significant design changes, you'll likely find a similar workflow much easier than trying to do everything directly inside Avery.
 
-   
+
 ## Test Print
 
 I strongly recommend performing a test print before using one of your Avery label sheets. If you're creating the full 16-disc collection, there are only a couple of spare labels available, so mistakes can become expensive quickly.
@@ -823,6 +818,8 @@ These settings worked well for my printer and Avery labels:
 
 Your exact settings may differ depending on your printer model and paper type.
 
+
+
 ---
 
 # Step 11: Apply Disc Labels
@@ -860,6 +857,12 @@ Once the label has been applied, allow it to settle for a short period before pl
 ---
 
 # Step 12: Blu-ray Case Covers
+
+<p align="center">
+  <img src="References/Guide Images/CaseFront.jpg" width="33%">
+  <img src="References/Guide Images/CaseBack.jpg" width="33%">
+  <img src="References/Guide Images/CaseSpine.jpg" width="33%">
+</p>
 
 It's time to finish the project with some cover art.
 
