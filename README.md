@@ -188,7 +188,7 @@ Before beginning, download both this repository and the One Pace episodes that w
 
 Download this repository by clicking **Code → Download ZIP** on the GitHub page.
 
-The repository is approximately **0.92 GB** and contains:
+The repository is approximately **0.99 GB** and contains:
 
 * Disc authoring project files
 * Disc label artwork
