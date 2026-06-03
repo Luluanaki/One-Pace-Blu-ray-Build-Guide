@@ -12,6 +12,7 @@ A reproducible physical media project for One Pace, featuring Blu-ray disc artwo
 <p align="center">
   <img src="References/Guide Images/Discs.jpg" width="80%">
 </p>
+
 ---
 
 ## Overview
@@ -455,7 +456,7 @@ Bitrate: 4 Mbps
 for every track.
 
 <p align="center">
-  <img src="References/Guide Images/AdjustBitrate.png" width="80%">
+  <img src="References/Guide Images/AdjustBitrate.png" width="50%">
 </p>
 
 ### Fine-Tuning
@@ -544,7 +545,7 @@ For example:
 One Pace conveniently stores the episode titles in the video metadata, making it easy to reference the official episode names if you choose to customize them.
 
  <p align="center">
-  <img src="References/Guide Images/ClipTitle.png" width="80%">
+  <img src="References/Guide Images/ClipTitle.png" width="50%">
 </p>
 
 To change a title:
@@ -617,7 +618,7 @@ You can modify:
 The **Language** field refers to the disc's metadata and menu language, not the audio language.
 
  <p align="center">
-  <img src="References/Guide Images/DiscTitle.png" width="80%">
+  <img src="References/Guide Images/DiscTitle.png" width="40%">
 </p>
 
 ---
@@ -681,7 +682,9 @@ We'll handle the burning process separately in the next step.
 
 9. Double- and triple-check your settings. Once the output process begins, you'll likely be waiting several hours before discovering any mistakes.
 
-![Output Settings](References/Guide%20Images/01_Output.png)
+ <p align="center">
+  <img src="References/Guide Images/01_Output.png" width="60%">
+</p>
 
 10. Click **Start Output** in the bottom left and let TMPGEnc do its thing.
 
@@ -720,8 +723,10 @@ This is the name that will appear on your Blu-ray player's interface when the di
 > **Note:** One of my finished discs has the wrong disc number in the label metadata. It's not worth wasting another BD-R to fix, but it does annoy me every time I see it. To be avoided.
 
 * Double- and triple-check all settings before proceeding.
-
-![Disc Writing Tool](References/Guide%20Images/02_DiscWriting.png)
+  
+ <p align="center">
+  <img src="References/Guide Images/02_DiscWriting.png" width="50%">
+</p>
 
 * Click **Write to Disc** in the upper-left corner and again let TMPGEnc do its thing.
 
@@ -988,7 +993,7 @@ There is now only one remaining step:
 
 **Watch One Pace.**
 
-Good luck. See you in a few months.
+Good luck. Share your project on r/OnePace so I can see it!
 
 ---
 
