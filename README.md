@@ -1,5 +1,5 @@
 # One Pace Blu-ray Build Guide
-I wanted a physical copy of One Pace, so I spent an unreasonable amount of time figuring out how to make one. This repository contains the artwork, project files, templates, and guide I created along the way. No video files included.
+This repository is a complete guide for creating a physical One Pace Blu-ray collection, including Blu-ray cover art, disc artwork, case inserts, templates, project files, and step-by-step instructions. No video files are included.
 
 
 > **Disclaimer:** This project is intended as a personal archival/workflow documentation project. It does not include or distribute copyrighted video files, fan edits, subtitles, or other copyrighted material.
